@@ -76,3 +76,11 @@ ssh -T git@github.com
 $ ssh -T git@github.com
 
 git remote add origin https://github.com/fashionstatus/budget-node-amplify.git
+
+
+add the AdministratorAwsAmplify Role 
+in General Setting for the budget-node-amplify app 
+2. edit the service role , add the permsion above to the  role needed 
+3. conver the web framework app to SSR using below aws cli commands 
+   aws amplify update-app --app-id d1lhvx4ain7e2k --platform WEB --region app-south-1
+   aws amplify update-app --app-id d1lhvx4ain7e2k --branch-name master --framework 'Next.js -- SSG' --region app-south-1

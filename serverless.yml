@@ -16,6 +16,26 @@ package:
     - README.md
     - .git/**
 
+backend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Starting backend pre-build phase"
+        - npm install -g serverless
+        - npm install
+    build:
+      commands:
+        - echo "Building backend"
+        - serverless deploy  
+    artifacts:
+    	baseDirectory: dist
+        files:
+    	  - '**/*'
+    postBuild:
+      commands:
+        - echo "Backend build complete"
+
+
 functions:
   api:
     handler: src/handler.server
