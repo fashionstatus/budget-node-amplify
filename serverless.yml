@@ -1,0 +1,36 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: combineus
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: budget-node-typescript
+service: budget-node-typescript
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+package:
+  exclude:
+    #- node_modules/**
+    - tests/**
+    - README.md
+    - .git/**
+
+functions:
+  api:
+    handler: src/handler.server
+    package:
+      include:
+        - node_modules/**
+        - src/**
+    events: # events trigger lambda functions
+      - http: # this is an API Gateway HTTP event trigger
+          path: /
+          method: ANY
+          cors: true
+      - http: # all routes get proxied to the Express router
+          path: /{proxy+}
+          method: ANY
+          cors: true
+plugins:
+  - serverless-offline

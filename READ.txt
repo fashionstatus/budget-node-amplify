@@ -1,0 +1,71 @@
+https://dev.to/krishna7852/serverless-framework-with-aws-nodejs-and-typescript-1n0i
+
+https://codetain.com/blog/lambda-in-typescript-with-serverless-framework/
+
+C:\utils\GlaubhantaSetup\budget-node-git\ifsatnet\budget-node-serverless>serverless deploy list functions
+
+api
+  All Versions: $LATEST, 1, 2
+
+
+C:\utils\GlaubhantaSetup\budget-node-git\ifsatnet\budget-node-serverless>serverless invoke local --function api
+
+Local Storage re-inisitaled not global soem problme
+jwt-auth-service authenticate .... passport being used
+jwt-auth-service authenticate .... passport being used
+myFirstValue
+req.headers {"content-length":0}
+CORS allowed
+
+✖ Error: ENOENT: no such file or directory, open 'C:\utils\GlaubhantaSetup\budget-node-git\ifsatnet\budget-node-serverless\log\app'
+
+For help, try the following:
+  • Run the command again with the "--debug" option
+  • Run "serverless support"
+  • Review the docs: https://www.serverless.com/framework/docs/
+
+
+serverless invoke local --function api --context '{"AUTHORIZATION":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"}'
+
+ommon Options
+Specify Stage: You can specify the stage (like dev, prod, etc.):
+
+bash
+Copy code
+serverless deploy --stage dev
+Specify Region: If you want to deploy to a specific region (e.g., us-east-1):
+
+bash
+Copy code
+serverless deploy --region us-east-1
+Deploy Functions Only: If you only want to deploy specific functions instead of the entire service:
+
+bash
+Copy code
+serverless deploy function --function yourFunctionName
+Verbose Output: To get more detailed output during the deployment process, use the --verbose flag:
+
+bash
+Copy code
+serverless deploy --verbose
+Skip the Package: If you want to skip the packaging step (useful for quick iterations), use:
+
+bash
+Copy code
+serverless deploy --no-package
+Deploy with Environment Variables: If you need to set environment variables during deployment, you can do so in your serverless.yml or pass them as CLI options:
+
+bash
+Copy code
+serverless deploy --stage prod --region us-east-1 --param='{"key":"value"}'
+Full Example Command
+Combining some of the options, a full command might look like this:
+
+bash
+Copy code
+serverless deploy --stage prod --region us-east-1 --verbose
+Conclusion
+Deploying a Serverless application with the CLI is straightforward. Adjust the command options according to your needs, such as specifying the stage or region, deploying specific functions, or getting verbose output for troubleshooting.
+
+Notes
+Ensure your AWS credentials (or other cloud provider credentials) are configured properly.
