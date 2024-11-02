@@ -9,7 +9,7 @@
   "scripts": {
     "gcp-build": "tsc -p .",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "tsc -p .",
+    "build": "tsc -p .  &&  node index.js",
     "build-netlify": "cd netlify/functions/rest-server && tsc -p . ",
     "json-move-netlify": "copy netlify\\functions\\rest-server\\userRegisteredJson*.* netlify\\functions\\rest-server\\netlify\\functions\\rest-server\\",
     "remove-index-netlify": "del netlify\\functions\\rest-server\\index*.* ",

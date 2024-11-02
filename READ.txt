@@ -69,3 +69,10 @@ Deploying a Serverless application with the CLI is straightforward. Adjust the c
 
 Notes
 Ensure your AWS credentials (or other cloud provider credentials) are configured properly.
+------------------------------------------------------------------------
+eval "$(ssh-agent -s)"
+ssh-add C:/utils/GlaubhantaSetup/budget-node-git/coed/git-budget-node/nov12024
+ssh -T git@github.com
+$ ssh -T git@github.com
+
+git remote add origin https://github.com/fashionstatus/budget-node-amplify.git
